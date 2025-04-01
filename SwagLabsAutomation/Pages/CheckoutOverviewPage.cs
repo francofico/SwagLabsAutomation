@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 using OpenQA.Selenium;
-using static System.Net.Mime.MediaTypeNames;
+
 
 namespace SwagLabsAutomation.Pages
 {
     public class CheckoutOverviewPage : BasePage
     {
-        private By itemsPriceLocator = By.ClassName("inventory_item_price");
-        private By itemTotalLocator = By.ClassName("summary_subtotal_label"); 
-        private By taxLocator = By.ClassName("summary_tax_label");
-        private By totalLocator = By.ClassName("summary_total_label");
-        private By finishButtonLocator = By.Id("finish");
+        private By itemsPriceLocator      = By.ClassName("inventory_item_price");
+        private By taxLocator             = By.ClassName("summary_tax_label");
+        private By totalLocator           = By.ClassName("summary_total_label");
+        private By finishButtonLocator    = By.Id("finish");
         private By completeMessageLocator = By.Id("checkout_complete_container");
 
 
@@ -30,8 +24,8 @@ namespace SwagLabsAutomation.Pages
 
             foreach (IWebElement item in driver.FindElements(itemsPriceLocator))
             {
-                string text = item.Text.Replace("$", string.Empty);
-                amount += double.Parse(text, CultureInfo.InvariantCulture);
+                string text  = item.Text.Replace("$", string.Empty);
+                amount      += double.Parse(text, CultureInfo.InvariantCulture);
             }
 
             return amount;

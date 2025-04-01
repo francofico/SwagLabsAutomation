@@ -4,9 +4,9 @@ namespace SwagLabsAutomation.Pages
 {
     public class ShoppingcartPage : BasePage
     {
-        private By cartItem = By.ClassName("cart_item");
+        private By cartItem         = By.ClassName("cart_item");
         private By checkoutButtonId = By.Id("checkout");
-        private By removeButtons = By.XPath("//*[contains(text(), 'Remove')]");
+        private By removeButtons    = By.XPath("//*[contains(text(), 'Remove')]");
 
         private IWebElement checkoutButton;
 
@@ -14,8 +14,8 @@ namespace SwagLabsAutomation.Pages
 
         public ShoppingcartPage(WebDriver driver) : base(driver)
         {
-            itemAmount = driver.FindElements(cartItem).Count();
-            checkoutButton = driver.FindElement(checkoutButtonId);
+            itemAmount      = driver.FindElements(cartItem).Count();
+            checkoutButton  = driver.FindElement(checkoutButtonId);
         }
 
         public int GetCurrentItemAmount()

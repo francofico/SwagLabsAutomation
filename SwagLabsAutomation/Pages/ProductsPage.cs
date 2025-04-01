@@ -12,11 +12,11 @@ namespace SwagLabsAutomation.Pages
     public class ProductsPage : BasePage
     {
 
-        private By addToCartButtons = By.XPath("//*[contains(text(), 'Add to cart')]");
-        private By shoppingCartIcon = By.Id("shopping_cart_container");
-        private By shoppingCartProductAmount = By.ClassName("shopping_cart_badge");
-        private By sortFromLowestToHighestPriceLocator = By.XPath("//*[@class='product_sort_container']/option[@value='lohi']");
-        private By itemPricesLocator = By.ClassName("inventory_item_price");
+        private By addToCartButtons                     = By.XPath("//*[contains(text(), 'Add to cart')]");
+        private By shoppingCartIcon                     = By.Id("shopping_cart_container");
+        private By shoppingCartProductAmount            = By.ClassName("shopping_cart_badge");
+        private By sortFromLowestToHighestPriceLocator  = By.XPath("//*[@class='product_sort_container']/option[@value='lohi']");
+        private By itemPricesLocator                    = By.ClassName("inventory_item_price");
         
         private ReadOnlyCollection<IWebElement>? addToCartButtonList;
 
@@ -26,13 +26,13 @@ namespace SwagLabsAutomation.Pages
 
         public void ClickRandomAddToCartButton()
         {
-            Random random = new Random();
+            Random random       = new Random();
 
             addToCartButtonList = driver.FindElements(addToCartButtons);
 
-            int buttonValue = random.Next(addToCartButtonList.Count);
+            int buttonValue     = random.Next(addToCartButtonList.Count);
+            
             addToCartButtonList[buttonValue].Click();
-
         }
 
         public string GetProductsAmountOnShoppingCart()

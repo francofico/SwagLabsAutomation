@@ -9,9 +9,9 @@ namespace SwagLabsAutomation.Pages
 {
     public class LoginPage : BasePage
     {
-        private By userFieldLocator = By.Id("user-name");
-        private By passwordFieldLocator = By.Id("password");
-        private By loginButtonLocator = By.Id("login-button");
+        private By userFieldLocator             = By.Id("user-name");
+        private By passwordFieldLocator         = By.Id("password");
+        private By loginButtonLocator           = By.Id("login-button");
 
         private By wrongCredentialsErrorMessage = By.ClassName("error-message-container");
 
@@ -22,9 +22,9 @@ namespace SwagLabsAutomation.Pages
         public LoginPage(WebDriver driver) : base(driver)
         {
             driver.Navigate().GoToUrl(BASE_URL);
-            userField = driver.FindElement(userFieldLocator);
+            userField     = driver.FindElement(userFieldLocator);
             passwordField = driver.FindElement(passwordFieldLocator);
-            loginButton = driver.FindElement(loginButtonLocator);
+            loginButton   = driver.FindElement(loginButtonLocator);
         }
 
         public ProductsPage? EnterCredentials(string username, string password)

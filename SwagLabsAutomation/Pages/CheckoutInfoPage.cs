@@ -10,7 +10,7 @@ namespace SwagLabsAutomation.Pages
 
         private By continueBtnLocator       = By.Id("continue");
 
-        private By errorMessageLocator = By.ClassName("error-message-container");
+        private By errorMessageLocator      = By.ClassName("error-message-container");
 
         private IWebElement firstNameField;
         private IWebElement lastNameField;
@@ -18,8 +18,8 @@ namespace SwagLabsAutomation.Pages
 
         public CheckoutInfoPage(WebDriver driver) : base(driver) 
         {
-            firstNameField = driver.FindElement(firstNameFieldLocator);
-            lastNameField = driver.FindElement(lastNameFieldLocator);
+            firstNameField  = driver.FindElement(firstNameFieldLocator);
+            lastNameField   = driver.FindElement(lastNameFieldLocator);
             postalCodeField = driver.FindElement(postalCodeFieldLocator);
         }
 
